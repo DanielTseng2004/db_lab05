@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "db_lab05": "file:",
-    "mariadb": "^3.4.1"
+    "mariadb": "^3.4.2",
+    "sequelize": "^6.37.7"
   }
 }
