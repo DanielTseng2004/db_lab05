@@ -1,19 +1,26 @@
 const { sequelize, DataTypes } = require('../orm');
 
-const Department = sequelize.define('Department', {
-  Department_ID: {
-    type: DataTypes.STRING(5),
+const Course = sequelize.define('Course', {
+  Course_ID: {
+    type: DataTypes.STRING(8),
     primaryKey: true
   },
-  Department_Name: {
-    type: DataTypes.STRING(50),
+  Title: {
+    type: DataTypes.STRING(100),
     allowNull: false
   },
-  Building: DataTypes.STRING(30),
-  Budget: DataTypes.DECIMAL(12, 2)
+  Credits: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  Department_ID: DataTypes.STRING(5),
+  Is_Required: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  }
 }, {
-  tableName: 'DEPARTMENT',
+  tableName: 'COURSE',
   timestamps: false
 });
 
-module.exports = Department;
+module.exports = Course;

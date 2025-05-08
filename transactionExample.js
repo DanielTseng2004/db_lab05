@@ -61,4 +61,4 @@ async function doTransaction(studentId, newDepartmentId) {
 }
 
 // 呼叫範例
-doTransaction('S10721002', 'BA001');  // 將學生轉到資工系
+doTransaction('S10721002', 'EE001');  // 將學生轉到資工系

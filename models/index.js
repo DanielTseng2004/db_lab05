@@ -1,6 +1,6 @@
 const { sequelize } = require('../orm');
 const Student = require('./Student');
-const Department = require('./DepartmentDepartment');
+const Department = require('./Department');
 const Course = require('./Course');
 const Enrollment = require('./Enrollment');
 
