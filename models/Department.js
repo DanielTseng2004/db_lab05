@@ -2,15 +2,18 @@ const { sequelize, DataTypes } = require('../orm');
 
 const Department = sequelize.define('Department', {
   Department_ID: {
-    type: DataTypes.STRING(5),
+    type: DataTypes.CHAR(5),
     primaryKey: true
   },
-  Department_Name: {
+  Name: {  // 修改為 Name 而不是 Department_Name
     type: DataTypes.STRING(50),
     allowNull: false
   },
-  Building: DataTypes.STRING(30),
-  Budget: DataTypes.DECIMAL(12, 2)
+  Location: DataTypes.STRING(50),
+  Phone: DataTypes.STRING(15),
+  Established_Year: DataTypes.INTEGER,
+  Chair_ID: DataTypes.CHAR(6),
+  College: DataTypes.STRING(30)
 }, {
   tableName: 'DEPARTMENT',
   timestamps: false

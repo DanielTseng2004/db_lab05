@@ -2,22 +2,18 @@ const { sequelize, DataTypes } = require('../orm');
 
 const Course = sequelize.define('Course', {
   Course_ID: {
-    type: DataTypes.STRING(8),
+    type: DataTypes.CHAR(8),
     primaryKey: true
   },
   Title: {
     type: DataTypes.STRING(100),
     allowNull: false
   },
-  Credits: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  Department_ID: DataTypes.STRING(5),
-  Is_Required: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-  }
+  Description: DataTypes.TEXT,
+  Credits: DataTypes.INTEGER,
+  Level: DataTypes.STRING(10),
+  Hours_Per_Week: DataTypes.INTEGER,
+  Department_ID: DataTypes.CHAR(5)
 }, {
   tableName: 'COURSE',
   timestamps: false

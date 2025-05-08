@@ -1,27 +1,28 @@
-// models/Student.js
 const { sequelize, DataTypes } = require('../orm');
 
 const Student = sequelize.define('Student', {
   Student_ID: {
-    type: DataTypes.STRING(9),
+    type: DataTypes.CHAR(9),
     primaryKey: true
   },
   Name: {
     type: DataTypes.STRING(50),
     allowNull: false
   },
-  Gender: {
-    type: DataTypes.CHAR(1)
-  },
+  Birth_Date: DataTypes.DATE,
+  Gender: DataTypes.CHAR(1),
   Email: {
-    type: DataTypes.STRING(100)
+    type: DataTypes.STRING(100),
+    unique: true
   },
-  Department_ID: {
-    type: DataTypes.STRING(5)
-  }
+  Phone: DataTypes.STRING(15),
+  Address: DataTypes.STRING(200),
+  Admission_Year: DataTypes.INTEGER,
+  Status: DataTypes.STRING(10),
+  Department_ID: DataTypes.CHAR(5)
 }, {
   tableName: 'STUDENT',
-  timestamps: false // 不使用預設的 createdAt 和 updatedAt 欄位
+  timestamps: false
 });
 
 module.exports = Student;
